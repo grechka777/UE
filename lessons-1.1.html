@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unreal</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand" href="index.html"
+                                  style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;"><img
+                src="assets/img/unreal-engine-icon-27.jpg.png" style="width: 76px;">Уроки Unreal Engine</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="lessons.html">Уроки</a>
+
+                        <!--    <div class="dropdown-menu">
+                                <a class="dropdown-item" href="lessons-1.html">#1 УРОК 1 - ОСНОВЫ ООП</a>
+                                <a class="dropdown-item" href="lessons-2.html">#2 УРОК 2 - УСТАНОВКА И СОЗДАНИЕ ПРОЕКТА</a>
+                                <a class="dropdown-item" href="lessons-3.html">#3 УРОК 3 - ЗНАКОМСТВО С ДВИЖКОМ</a>
+                                <a class="dropdown-item" href="lessons-4.html">#4 УРОК 4 - C++ В UE4</a>
+                            </div>
+                         -->
+
+                    </li>
+
+
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">О разработке</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <p class="py-5">
+
+    </p>
+
+    <h1 class="text-center text-uppercase">УРОК 1 - Создание персонажа </h1>
+    <h2 class="text-center text-uppercase text-secondary mb-5"></h2>
+
+    <p class="shirt">
+        В <kbd>Content Browser</kbd> перейдите к папке <kbd>Blueprints</kbd>. Нажмите на кнопку <kbd>Add New</kbd> и
+        выберите <kbd>Blueprint Class</kbd>.<br>
+    </p>
+    <div class="text-left"><a href="assets/img/Снимок1.PNG" target="_blank"><img
+            src="assets/img/Снимок1.PNG" class="img-thumbnail" alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 1 - Добавление класса
+    </p>
+
+    <br>
+    <p class="shirt">
+        Выберите во всплывающем окне <kbd>Character</kbd>. <kbd>Character</kbd> Наследуеться от <kbd>Pawn</kbd> но
+        этот класс содержит зарание заготовки свойственные человеку. Назовите его <kbd>BP_Player</kbd>.<br>
+        <br></p>
+
+    <div class="text-left"><a href="assets/img/Снимок2.PNG" target="_blank"><img
+            src="assets/img/Снимок2.PNG" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 2 - Создание класса
+    </p>
+
+    <br>
+    <p class="shirt">
+        Далее левой кнопкой мыши перетаскиваем из <kbd>Content Browser</kbd> на игровую арену во <kbd>viewport</kbd>. На
+        вкладку <kbd>World Outliner</kbd> или же в сомом <kbd>viewport</kbd> выбираем класс <kbd>BP_Player</kbd>
+        и
+        переходим во вкладку <kbd>Details</kbd>
+        Находим пункт <kbd>Auto Possess Player</kbd> и выбираем <kbd>Player 0</kbd>
+
+        <br><br></p>
+    <div class="text-left"><a href="assets/img/Безымянный1.png" target="_blank"><img
+            src="assets/img/Безымянный1.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 3 - Свойства объектов
+    </p>
+
+    <br>
+    <p class="shirt">
+        Это закрепит играка в классе <kbd>Character</kbd> при старте игры. Также можно использовать другой способ
+        подключении играка через <kbd>GameMode</kbd>.
+        Для этого добовляем новый <kbd>Blueprint class</kbd>. Делаем анологичные действия добовление класса и
+        выбираем
+        на этот раз класс <kbd>Game Mode Base</kbd> и называем его <kbd>gamemode</kbd>.
+        После этого в <kbd>Content Browser</kbd> открываем его и в <kbd>Default pawn Class</kbd> указываем класс
+        <kbd>BP_Player</kbd>.
+        <br><br></p>
+    <div class="text-left"><a href="assets/img/Безымянный2.png" target="_blank"><img
+            src="assets/img/Безымянный2.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 4 - Класс gamemode
+    </p>
+
+    <br>
+    <p class="shirt">
+        Сам же класс <kbd>GameMode</kbd> необходимо закрепить в настройках проекта выбрав вкладку <kbd>Project
+        Settings</kbd> в проекте или же открыть ее из меню
+        <kbd>Edit</kbd>. Тут выбираем настойки проекта <kbd>Project>>Maps & Modes</kbd> Устанавлеваем наш созданный
+        геймод и карту по умолчанию.
+        <br><br></p>
+    <div class="text-left"><a href="assets/img/Безымянный3.png" target="_blank"><img
+            src="assets/img/Безымянный3.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 5 - Начальные настройки
+    </p>
+
+    <br>
+    <p class="shirt">
+        Этот способ евляется более правильным и привязывает игрока ко всем уровням игры.
+
+
+    </p>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unreal</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand" href="index.html"
+                                  style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;"><img
+                src="assets/img/unreal-engine-icon-27.jpg.png" style="width: 76px;">Уроки Unreal Engine</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Главная</a></li>
+                  <!--  <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="true" aria-expanded="false">Уроки</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="lessons-1.html">#1 УРОК 1 - ОСНОВЫ ООП</a>
+                            <a class="dropdown-item" href="lessons-2.html">#2 УРОК 2 - УСТАНОВКА И СОЗДАНИЕ ПРОЕКТА</a>
+                            <a class="dropdown-item" href="lessons-3.html">#3 УРОК 3 - ЗНАКОМСТВО С ДВИЖКОМ</a>
+                            <a class="dropdown-item" href="lessons-4.html">#4 УРОК 4 - C++ В UE4</a>
+                        </div>
+                    </li>
+
+                    </li> -->
+                    <li class="nav-item dropdown"><a class="nav-link" href="lessons.html">Уроки</a>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">О разработке</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <section class="py-5">
+        <h1 class="text-center text-uppercase">C++ в UE4</h1>
+        <h2 class="text-center text-uppercase text-secondary mb-5"></h2>
+        <div class="row">
+            <div class="col">
+                <p class = "shirt">Это руководство покажет вам как писать код на С++ в Unreal Engine. Не переживайте, разработка на С++
+                    в Unreal Engine весёлая, и совершенно не сложная, чтобы её начать. Нам нравится думать о Unreal C++
+                    как о «помогающем C++» *, поскольку
+                    мы создали множество разных фич чтобы сделать C++ легче для всех!<br>&nbsp;<em></em><br>Перед тем
+                    как мы начнем, важно чтобы вы были уже знакомы
+                    с C ++ или другим, схожим языком программирования. Это руководство написано для разработчиков
+                    имеющих опыт с C++. Если вы знаете, C#, Java или JS, вы найдете множество знакомых аспектов.<br></p>
+                <p class = "shirt">UE предоставляет два метода для создания элементов геймплея — C++ и Blueprint. С++ программисты
+                    добавляют основные блоки геймплея, таким образом, чтобы дизайнеры (тут имеется ввиду левел-дизайнер,
+                    а не художник) с помощью этих блоков
+                    мог создавать свои элементы геймплея для отдельного уровня или всей игры. В таком случае,
+                    программисты работают в своем (своей) любимой IDE (например — MS Visual Studio, Xcode), а дизайнер
+                    работает в Blueprint редакторе UE.<br><br>API
+                    геймплея и фреймворк классов полностью доступны из обоих систем. Обе системы можно использовать по
+                    отдельности, но используя их вместе вы получаете более мощную и гибкую систему. Это значит, что
+                    лучшей практикой будет слаженная
+                    работа программистов, которые создают основы геймплея и левел-дизайнеров, которые используют эти
+                    блоки для создания увлекательного геймплея.<br><br>С учетом всего вышесказанного, далее будет
+                    рассмотрен типичный рабочий процесс
+                    программиста C++, который создает блоки для дизайнера. В этом случает вы должны создать класс,
+                    который в дальнейшем будет расширен с помощью Blueprint, созданного дизайнером или другим
+                    программистом. В этом классе мы создадим различные
+                    свойства (переменные), которые сможет задать дизайнер. На основе этих заданных значений, мы
+                    собираемся извлечь новые значения созданных свойств. Данный процесс очень прост благодаря
+                    инструментам и макросам, которые мы предоставляем
+                    для вас.</p>
+                <p class = "shirt">Самое первое что требуется сделать это воспользоваться&nbsp;<em>мастером классов</em>&nbsp;(class
+                    wizard) предоставляемый UE, для создания базы будущего С++ класса, который в дальнейшем будет
+                    расширен с помощью Blueprint. Ниже показано,
+                    каким образом происходит выбор при создании нового класса, дочернего от класса Actor.</p><div class="text-center"><img
+                    src="assets/img/97aa44ffcdc9e282910c70e0bd42d25a.jpg"></div>
+                <p class = "shirt">Далее требуется ввести название вашего класса. Мы воспользуемся именем по умолчанию (<em>MyActor</em>).
+                </p><div class="text-center"><img src="assets/img/39502cbfcec7af6ed1cdd75f07aa2d15.jpg"></div>
+                <p class = "shirt">После того как вы создадите класс, мастер генерирует файлы и откроет IDE, таким образом что вы сразу
+                    можете начать редактировать его. Ниже приведен полученный таким образом код созданного класса.</p>
+                <p class = "shirt">#include "GameFramework/Actor.h"<br>#include "MyActor.generated.h"<br><br>UCLASS()<br>class AMyActor
+                    : public AActor<br>{<br> GENERATED_BODY()<br><br>public: <br> <em>// Устанавливает значения по
+                        умолчанию для свойств этого Actor</em><br> AMyActor();<br> <em>// Вызывается во время начала
+                        игры или спавне этого Actor</em><br> virtual void BeginPlay() override;<br><br> <em>//
+                        Вызывается каждый кадр</em><br> virtual void Tick( float DeltaSeconds ) override;<br>};</p>
+                <p class = "shirt">Мастер классов генерирует класс с методами&nbsp;<em>BeginPlay()</em>&nbsp;и&nbsp;<em>Tick()</em>, со
+                    спецификатором&nbsp;<em>перегрузки (override)</em>. Событие&nbsp;<em>BeginPlay()</em>&nbsp;происходит
+                    когда Actor входит в игру, в
+                    состоянии разрешённом для игры (<em>playable state</em>). Хорошей практикой является инициирование
+                    геймплей-кода вашего класса в этом методе. Метод&nbsp;<em>Tick()&nbsp;</em>вызывается каждый кадр с
+                    параметром, который равен времени,
+                    прошедшему с последнего своего вызова. В этом методе должна содержаться постоянно повторяющаяся
+                    логика. Если у вас она отсутствует, то лучше всего будет убрать данный метод, что немного увеличит
+                    производительность. Если вы удалили
+                    код данного метода, убедитесь что вы так же удалили строку в конструкторе класса, которая указывает,
+                    что&nbsp;<em>Tick()</em>&nbsp;должен вызываться каждый кадр. Ниже приведет код конструктора с
+                    указанной строкой:</p>
+                <p class = "shirt">AMyActor::AMyActor()<br>{<br> <em>// Разрешить данному actor вызывать Tick() каждый кадр.</em><br>
+                    <em>// Вы можете отключить это чтобы увеличить производительность,</em><br> <em>// если вам не
+                        требуется этот метод.</em><br> PrimaryActorTick.bCanEverTick
+                    = true;<br>}</p>
+                <p class = "shirt">Теперь у нас есть собственный класс. Давайте создадим несколько свойств, которые могут быть
+                    использованы другими разработчиками, непосредственно в UE. Для отображения свойства в редакторе
+                    требуется использовать специальный макрос UPROPERTY().
+                    Все что требуется сделать, это написать макрос UPROPERTY(EditAnywhere) перед объявлением переменной,
+                    как написано ниже:</p>
+                <p class = "shirt">UCLASS()<br>class AMyActor : public AActor<br>{<br> GENERATED_BODY()<br><br>
+                    UPROPERTY(EditAnywhere)<br> int32 TotalDamage;<br>}</p>
+                <p class = "shirt">Это все что требуется сделать, чтобы редактировать данное значение в редакторе. Есть еще несколько
+                    путей, для указания каким образом и где данная переменная редактируется. Это делается с помощью
+                    указания доп. опций в макросе. К примеру,
+                    если вы хотите чтобы данное свойство было сгруппировано в разделе с другими соответствующими
+                    свойствами, вы должны указать категорию, как это указанно ниже:</p>
+                <p class = "shirt">UPROPERTY(EditAnywhere, Category="Damage")<br>int32 TotalDamage</p>
+                <p class = "shirt">Теперь, пользователи будут видеть вашу переменную помещенную в категорию с заголовком&nbsp;<em>«Damage»</em>.
+                    В этой категории так же могут быть другие свойства, у которых указана такая же категория. Это
+                    отличный способ размещать наиболее
+                    часто используемые переменные вместе.</p>
+                <p class = "shirt">Теперь сделаем свойство доступным из Bluerpint:<br>UPROPERTY(EditAnyway, BlueprintReadWrite,
+                    Category="Damage")<br>int32 TotalDamage<em>;</em></p>
+                <p class = "shirt">Как вы можете увидеть, мы указали специальный параметр, для возможности чтения и записи свойства. Вы
+                    так же можете использовать другую опцию —&nbsp;<em>BlueprintReadOnly</em>, чтобы ваши переменные в
+                    редакторе указывались как константные.&nbsp;<br>Перед
+                    тем как перейдем к следующему разделу, давайте добавим несколько переменных нашему классу. У нас уже
+                    имеется переменная хранящая полный урон, который может нанести Actor, но давайте считать, что урон
+                    может производиться длительное
+                    время. Код ниже содержит одну новую переменную доступную для редактирования левел-дизайнером и одну
+                    недоступную для редактирования:<br></p>
+                <p class = "shirt">UCLASS()<br>class AMyActor : public AActor<br>{<br> GENERATED_BODY()<br><br> UPROPERTY(EditAnywhere,
+                    BlueprintReadWrite, Category="Damage")<br> int32 TotalDamage;<br><br> UPROPERTY(EditAnywhere,
+                    BlueprintReadWrite, Category="Damage")<br> float DamageTimeInSeconds;<br><br>
+                    UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category="Damage")<br> float
+                    DamagePerSecond;<br> ...<br>}<br></p>
+                <p class = "shirt">Как видно,&nbsp;<em>DamageTimeInSeconds</em>&nbsp;свойство, которое доступно для редактирования в
+                    редакторе.&nbsp;<em>DamagePerSecond</em>&nbsp;будет вычисляться, как вы увидите позднее, на основе
+                    значения заданного в&nbsp;<em>DamageTimeInSeconds</em>,
+                    например, левел-дизайнером. Флаг&nbsp;<em>VisibleAnywhere</em>&nbsp;указывает что свойство
+                    отображается, но не может быть изменено. Флаг&nbsp;<em>Transient</em>&nbsp;означает что это свойство
+                    нельзя сохранить или прочитать с диска,
+                    то есть полученное значение является непостоянным. На картинке ниже показано как отображаются эти
+                    свойства в разделе значений по умолчанию нашего класса.<br></p><div class="text-center"><img
+                    src="assets/img/825f313e9e87f622e511a2ceea78fb66.jpg"></div>
+                <p class = "shirt">Установка начальных значений переменных происходит как и в обыкновенном C++ классе — в конструкторе.
+                    Ниже приведены два примера, каким образом это можно сделать, оба примера эквиваленты по
+                    функциональности:<br></p>
+                <p class = "shirt">AMyActor::AmyActor()<br>{<br> TotalDamage = 200.0f;<br> DamageTimeInSeconds = 1.0f;<br>}<br><br>AMyActor::AmyActor()
+                    :<br> TotalDamage (200.0f);<br> DamageTimeInSeconds (1.0f);<br>{<br>}<br></p>
+                <p class = "shirt">Так же возможно задавать начальные значения основанные на значениях заданных в редакторе. Эти данные
+                    задаются после конструктора, для этого требуется использовать метод PostInitProperties(). В данном
+                    примере&nbsp;<em>TotalDamage</em>&nbsp;и&nbsp;<em>DamageTimeInSeconds</em>&nbsp;задаются
+                    левел-дизайнером. Независимо от того, заданны ли эти значения из редактора, вы по прежнему можете
+                    задать требуемые начальные значения, как мы сделали это ранее.&nbsp;<br>Заметка: если вы не задаете
+                    значения по умолчанию, они автоматически
+                    будут установлены в 0 или nullptr для значений указателей.<br></p>
+                <p class = "shirt">void AMyActor::PostInitProperties()<br>{<br> Super::PostInitProperties();<br> DamagePerSecond =
+                    TotalDamage / DamageTimeInSeconds;<br>}<br></p>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

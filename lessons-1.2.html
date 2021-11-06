@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unreal</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand" href="index.html"
+                                  style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;"><img
+                src="assets/img/unreal-engine-icon-27.jpg.png" style="width: 76px;">Уроки Unreal Engine</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="lessons.html">Уроки</a>
+
+                        <!--    <div class="dropdown-menu">
+                                <a class="dropdown-item" href="lessons-1.html">#1 УРОК 1 - ОСНОВЫ ООП</a>
+                                <a class="dropdown-item" href="lessons-2.html">#2 УРОК 2 - УСТАНОВКА И СОЗДАНИЕ ПРОЕКТА</a>
+                                <a class="dropdown-item" href="lessons-3.html">#3 УРОК 3 - ЗНАКОМСТВО С ДВИЖКОМ</a>
+                                <a class="dropdown-item" href="lessons-4.html">#4 УРОК 4 - C++ В UE4</a>
+                            </div>
+                         -->
+
+                    </li>
+
+
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">О разработке</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <p class="py-5">
+    <h1 class="text-center text-uppercase">УРОК 2 - Настройка управления </h1>
+    <h2 class="text-center text-uppercase text-secondary mb-5"></h2>
+    <p class="shirt">
+        Для начало нам нужно установить несколько переменных движение.
+    </p>
+    <h1>Значение оси и масштаб ввода</h1><br>
+    <p class="shirt">
+        Перед заданием полей Scale нам нужно больше узнать о том, как работать со <em>значениями осей</em>.<br>
+        <br>
+    </p>
+    <p class="shirt">
+        Значение оси — это численное значение, определяемое типом ввода и способом его использования. При нажатии на
+        кнопки и клавиши на выход подаётся 1. Стики имеют выходные значения от -1 до 1, зависящие от направления и
+        наклона стика.
+    </p>
+    <br>
+    <div class="text-center"><a href="assets/img/1f1d5aabe6964fc204aa9daeb8c52940.png" target="_blank"><img
+            src="assets/img/1f1d5aabe6964fc204aa9daeb8c52940.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 1 - Ось Y
+    </p>
+    <br>
+    <br>
+
+    <p class="shirt">
+        Мы можем использовать значение оси для управления скоростью. Например, если мы нажмём стик до упора, то значение
+        оси будет 1. Если нажать наполовину, то значение будет 0.5.<br>
+        <br>
+        Умножая значение оси на переменную скорости, мы можем регулировать с помощью стика скорость движения.
+    </p>
+
+    <br>
+    <div class="text-center"><a href="assets/img/668a0bb25a6c9576d0b36babfd2e8f18.png" target="_blank"><img
+            src="assets/img/668a0bb25a6c9576d0b36babfd2e8f18.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 2 - Ось X
+    </p>
+    <br>
+
+    <p class="shirt">
+        Также значение оси можно использовать для задания направления вдоль оси. Если умножить скорость на положительное
+        значение оси, то мы получим положительное смещение. При использовании отрицательного значения оси получим
+        отрицательное смещение. Прибавляя это смещение к местонахождению Character, мы задаём направление его
+        движения.
+    </p>
+    <br>
+    <div class="text-center"><a href="assets/img/0ced53c28888e67d573867142bb5ecbd.png" target="_blank"><img
+            src="assets/img/0ced53c28888e67d573867142bb5ecbd.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 3 - События Axis
+    </p>
+    <br>
+
+    <p class="shirt">
+        Клавиши клавиатуры могут подавать на выход только значения 1 или 0, то можно использовать <em>scale</em> для
+        преобразования их в отрицательные числа. Это можно сделать, взяв значение оси и умножив его на масштаб.<br>
+
+        Умножив положительное (значение оси) на отрицательный (масштаб), мы получим отрицательное значение.<br>
+        <br>
+        Задайте масштаб клавиш <em>S</em> и <em>A</em>, нажав на поле <em>Scale</em> и введя <em>-1</em> [1].<br>
+        <br>
+        Для того что бы начать настраивать оси движения нужно перейни в <kbd>Project Settings >> Engine</kbd> вкладка
+        <kbd>input</kbd>
+        Здесь в меню <kbd>Bindings</kbd> Есть два действия <kbd>Action Mappings</kbd> и <kbd>Axis Mappings</kbd>
+        Первое отвичает за одиночное нажатия вторая за оси.
+        Нажимаем на вторую вкладку и добавляем две оси с двумя группами. Назовем первую ось <kbd>ForwardBackward</kbd>
+        в группе добовляем две клавиши <kbd>W</kbd> и <kbd>S</kbd> Где в <kbd>S</kbd> указываем значение
+        <kbd>Scale</kbd> = -1 анологично для второй оси с клавишами <kbd>A</kbd> и <kbd>D</kbd> где <kbd>A</kbd>
+        указываем <kbd>Scale</kbd> =-1 и назовем ее <kbd>RightLift</kbd>.
+        Созданим еще две оси для оглядования мышью. Назовем их <kbd>LookUD</kbd> и <kbd>LookRL</kbd>
+        и выстовим значения <kbd>Mouse X</kbd> и <kbd>Mouse Y</kbd>
+        Также в <kbd>Action Mappings</kbd> добавим
+        одну ось и назовем ее <kbd>Jump</kbd> а клавишу назначим <kbd>Space Bar</kbd>
+    </p>
+
+    <br>
+    <div class="text-center"><a href="assets/img/снимок3.png" target="_blank"><img
+            src="assets/img/снимок3.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 4 - Параметры input
+    </p>
+    <br>
+    <p class="shirt">
+        Переходим в класс <kbd>BP_Player</kbd> и открываем <kbd>Event Graph</kbd> Здесь правой кнопкой мыши
+        выводим события настроенных осей. Для движение персонажей нужно добавить следующие функции
+        <kbd>Add movement input</kbd> к этой функции нужно дать вектор <kbd>Get actor Forward(Right) Vector</kbd>
+        Значение векторов зависит от того куда смотрит игрок. Функции <kbd>Add controller Yaw/Pitch input</kbd>
+        нужны для осмотра мышью. Так же к функциям даем значение векторов <kbd>Axis Value</kbd> Анологично
+        подключим функцию <kbd>Jump</kbd>
+    </p>
+    <br>
+    <div class="text-center"><a href="assets/img/снимок4.png" target="_blank"><img
+            src="assets/img/снимок4.png" class="img-thumbnail " alt="Открыть оригинал"></a>
+    </div>
+    <p class="text-center shirt">
+        Рисунок 5 - Event graf
+    </p>
+    <br>
+
+
+
+</div>
+
+<div class="container">
+
+</div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unreal</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand" href="index.html"
+                                  style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;"><img
+                src="assets/img/unreal-engine-icon-27.jpg.png" style="width: 76px;">Уроки Unreal Engine</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link" href="lessons.html">Уроки</a>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">О разработке</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <section class="py-5">
+        <h1 class="text-center text-uppercase">ЗНАКОМСТВО С ДВИЖКОМ</h1>
+        <h2 class="text-center text-uppercase text-secondary mb-5"></h2>
+        <div class="row">
+            <div class="col">
+                <p class="shirt" class="shirt">После создания проекта откроется редактор. Он разделён на несколько
+                    панелей:</p>
+                <div class="text-center"><img src="assets/img/8e5beae7603538a407cc3d80627203b4.jpg"></div>
+                    <p class="shirt"><em>Content Browser:</em>&nbsp;в этой панели отображаются все файлы проекта. Её
+                        можно использовать для создания папок и упорядочивания файлов. Здесь также можно выполнять поиск
+                        по файлам с помощью поисковой строки или фильтров.<em>Modes:</em>&nbsp;в
+                        этой панели можно переключаться между инструментами, например&nbsp;<em>Landscape Tool</em>&nbsp;и&nbsp;<em>Foliage
+                            Tool</em>. Инструментом по умолчанию является&nbsp;<em>Place Tool</em>. Он позволяет
+                        располагать на уровне различные
+                        типы объектов, такие как источники освещения и камеры.<em>World Outliner:</em>&nbsp;отображает
+                        все объекты на текущем уровне. Можно упорядочить список, распределив связанные объекты по
+                        папкам, а также искать и фильтровать их по
+                        типам.<em>Details:</em>&nbsp;здесь отображаются все свойства выбранного объекта. Эта панель
+                        используется для изменения параметров объекта. Внесённые изменения повлияют только на выбранный
+                        экземпляр объекта. Например, если в сцене
+                        есть две сферы, то при изменении размера одной изменения коснутся только неё.<em>Toolbar:</em>&nbsp;содержит
+                        множество различных функций. Чаще всего мы будем
+                        пользоваться&nbsp;<em>Play</em>.<em>Viewport:</em>&nbsp;это обзор уровня.
+                        Осматриваться по сторонам можно, удерживая&nbsp;<em>правую клавишу мыши</em>и&nbsp;<em>перемещая
+                            её</em>. Для перемещения по уровню нужно зажать&nbsp;<em>right-click</em>&nbsp;and use the&nbsp;<em>WASD</em>&nbsp;keys.
+                    </p>
+                    <p class="shirt">Какой смысл в поворотном столе, если на нём нечего показывать?&nbsp;<a
+                            href="https://koenig-media.raywenderlich.com/uploads/2016/12/UnrealTutorialBanana-1.zip">Скачайте
+                        эту модель банана</a>. Внутри находятся два
+                        файла:&nbsp;<em>Banana_Model.fbx</em>&nbsp;и&nbsp;<em>Banana_Texture.jpg</em>.
+                        Можете также использовать собственную модель, но зачем, если есть такой потрясающий банан? Чтобы
+                        Unreal мог использовать файлы, их нужно импортировать. Перейдите в Content Browser и нажмите на&nbsp;<em>Import</em>.
+                    </p><div class="text-center"><img src="assets/img/ec8955ac9b2b4eba3098923e68365937.png"></div>
+                    <p class="shirt">С помощью диспетчера файлов найдите папку, в которой находятся&nbsp;<em>Banana_Model.fbx</em>&nbsp;и&nbsp;<em>Banana_Texture.jpg</em>&nbsp;are.
+                        Выделите оба файла и нажмите&nbsp;<em>Open</em>.</p>
+                    <p class="shirt">Unreal предложит несколько вариантов импорта файла .fbx.&nbsp;<em>Снимите</em>&nbsp;флажок&nbsp;<em>Import
+                        Materials</em>, потому что мы будем создавать собственный материал. Остальные параметры можно не
+                        менять.</p><div class="text-center"><img src="assets/img/c4d3fdb97d1f91a425f1f7773962e3ac.png"></div>
+                    <p class="shirt">При импорте файла на самом деле он не сохраняется в проект, если не указать этого
+                        явным образом. Сохранять файлы можно, нажав на файл&nbsp;<em>правой клавишей мыши</em>&nbsp;и
+                        выбрав&nbsp;<em>Save</em>. Также можно сохранить все файлы
+                        за раз, выбрав&nbsp;<em>File\Save All</em>. Старайтесь сохраняться почаще!<br>Учтите, что в
+                        Unreal модели называются «мешами» (<em>meshes</em>). Теперь у нас есть меш банана, настало время
+                        добавить его на уровень. Чтобы добавить
+                        на уровень меш,&nbsp;<em>нажмите правой клавишу
+                            мыши</em>&nbsp;и&nbsp;<em>перетащите</em>&nbsp;<em>Banana_Model</em>&nbsp;из Content Browser
+                        во Viewport. Отпустите&nbsp;<em>левую клавишу мыши</em>&nbsp;и меш добавится на уровень.</p><div class="text-center">
+                    <img
+                            src="assets/img/cf453b18b54c583e9d74f89e3776a937.gif"></div>
+                    <p class="shirt">Объекты на уровне можно&nbsp;<em>перемещать</em>,&nbsp;<em>поворачивать</em>&nbsp;и&nbsp;<em>масштабировать</em>.
+                        Горячие клавиши для этих действий —&nbsp;<em>W</em>,&nbsp;<em>E</em>&nbsp;и&nbsp;<em>R</em>.
+                        После нажатия на них
+                        можно использовать манипулятор.</p><div class="text-center"><img src="assets/img/6919129f8209d1374d7a070abba0594d.gif"></div>
+                    <p class="shirt">Для создания материала нужно перейти в Content Browser и нажать на зелёную кнопку&nbsp;<em>Add
+                        New</em>. Появится меню со списком ассетов, которые можно создать.
+                        Выберите&nbsp;<em>Material</em>.<br></p><div class="text-center"><img
+                            src="assets/img/db0c9f371a7b508377ad13bf72dd34ef.png"></div>
+                    <p class="shirt">Назовите материал&nbsp;<em>Banana_Material</em>, а затем&nbsp;<em>дважды нажмите
+                        левой клавишей мыши</em>&nbsp;на файле, чтобы открыть его в редакторе материалов.<br></p><div class="text-center"><img
+                            src="assets/img/12db67172bccbd97f94f9d59aa4f9bfa.png"></div>
+                    <p class="shirt">Редактор материалов состоит из пяти основных панелей:<br></p><div class="text-center"><img
+                            src="assets/img/3694d90509dbad0f8f68a8478d86cffb.png"></div>
+                    <p class="shirt"><em>Graph:</em>&nbsp;в этой панели содержатся все ноды (узлы) и
+                        нод&nbsp;<em>Result</em>. Перемещаться по панели можно, удерживая&nbsp;<em>правую клавишу
+                            мыши</em>&nbsp;и&nbsp;<em>двигая</em>&nbsp;мышью. Масштабирование выполняется&nbsp;<em>прокруткойколёсика
+                            мыши</em>.<em>Details:</em>&nbsp;здесь
+                        отображаются свойства выбранного нода. Если нод не выбран, то здесь отображаются свойства
+                        материала.<em>Viewport:</em>&nbsp;содержит меш предварительного просмотра, представляющий
+                        материал. Поворачивать камеру можно, удерживая&nbsp;<em>левую клавишу</em>&nbsp;и&nbsp;<em>двигая</em>&nbsp;мышь.
+                        Масштабирование выполняется&nbsp;<em>прокруткой</em>&nbsp;<em>колёсика
+                            мыши</em>.<em>Palette:</em>&nbsp;список всех нодов, доступных для вашего материала.<br></p>
+                    <p class="shirt">Прежде чем приступать к созданию своего материала, нужно узнать про объекты,
+                        которые используются для его создания:&nbsp;<em>ноды</em>.<br>Ноды составляют бОльшую часть
+                        материала. Существует множество типов нодов, имеющих различные
+                        функции.<br>У нодов есть входы и выходы, представленные кругом со стрелкой. Входы расположены
+                        слева, а выходы — справа.<br>Вот пример с использованием нодов&nbsp;<em>Multiply</em>&nbsp;и&nbsp;<em>Constant3Vector</em>,
+                        добавляющих
+                        текстуре жёлтого цвета:<br></p><div class="text-center"><img src="assets/img/a75a53b1a5992ba69dfea074afcf36c0.png"></div>
+                    <p class="shirt">У материалов есть особый нод, называемый нодом&nbsp;<em>Result</em>, который в
+                        нашем случае уже создан как&nbsp;<em>Banana_Material</em>. Здесь заканчиваются со временем все
+                        ноды. То, что подключено к этому ноду, определяет внешний
+                        вид конечного материала. Для добавления модели цвета и деталей нам
+                        необходима&nbsp;<em>текстура</em>. Текстура — это просто двухмерное изображение. Обычно они
+                        проецируются на трёхмерные модели, придавая им цвет и детали.<br>Для
+                        текстурирования банана мы используем&nbsp;<em>Banana_Texture.jpg</em>. Применить в материале
+                        текстуру позволяет нод&nbsp;<em>TextureSample</em>.<br>Перейдите к панели Palette и найдите&nbsp;<em>TextureSample</em>.
+                        Добавьте
+                        нод, удерживая&nbsp;<em>левую клавишу мыши</em>&nbsp;и&nbsp;<em>перетащив</em>&nbsp;его на
+                        схему.<br></p><div class="text-center"><img src="assets/img/f79c010a853743d48f260c0a40f0df24.gif"></div>
+                    <p class="shirt">Перейдите к панели Palette и найдите&nbsp;<em>TextureSample</em>. Добавьте нод,
+                        удерживая&nbsp;<em>левую клавишу мыши</em>&nbsp;и&nbsp;<em>перетащив</em>&nbsp;его на схему.
+                        Откроется меню, в котором перечислены все текстуры проекта.
+                        Выберите&nbsp;<em>Banana_Texture</em>. Чтобы увидеть текстуру на меше предварительного
+                        просмотра, нужно подключить её к ноду&nbsp;<em>Result</em>. Удерживайте&nbsp;<em>левую клавишу
+                            мыши</em>&nbsp;на&nbsp;<em>белом</em>&nbsp;контакте
+                        выхода нода&nbsp;<em>TextureSample</em>.&nbsp;<em>Перетащите</em>&nbsp;его на входной контакт&nbsp;<em>Base
+                            Color</em>&nbsp;нода&nbsp;<em>Result</em>.<br></p><div class="text-center"><img
+                            src="assets/img/3df43fe7d19f2ac3ec4784a330b68d4c.gif"></div>
+                    <p class="shirt">Нажмите на&nbsp;<em>Apply</em>&nbsp;в Toolbar, чтобы обновить материал, и закройте
+                        редактор материалов после завершения. Чтобы применить материал на банан, нужно его назначить.
+                        Вернитесь к Content Browser и&nbsp;<em>дважды нажмите</em>&nbsp;на&nbsp;<em>Banana_Model</em>,
+                        чтобы открыть его. Появится следующее окно редактора:<br></p><div class="text-center"><img
+                            src="assets/img/88b394ee3fdc6b37fcc657f164e5bb96.jpg"></div>
+                    <p class="shirt">Перейдите в панель Details и найдите раздел&nbsp;<em>Materials</em>. Нажмите на&nbsp;<em>раскрывающееся
+                        меню</em>, расположенное справа от&nbsp;<em>Element 0</em>, и
+                        выберите&nbsp;<em>Banana_Material</em>.&nbsp;Закройте редактор
+                        мешей, вернитесь к основному редактору и посмотрите на Viewport. Вы увидите, что теперь на
+                        банане есть текстура. Поздравляю, вы теперь знаете всё необходимео, чтобы стать дизайнером
+                        уровней!<br></p><div class="text-center"><img src="assets/img/a8a2d7c7f08f751f623b04f26efd77e5.jpg"></div></div>
+            </div>
+    </section>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
